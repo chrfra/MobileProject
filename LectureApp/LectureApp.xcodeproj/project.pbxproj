@@ -19,6 +19,8 @@
 		6657E040184752360028B14A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6657E028184752360028B14A /* UIKit.framework */; };
 		6657E048184752360028B14A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6657E046184752360028B14A /* InfoPlist.strings */; };
 		6657E04A184752360028B14A /* LectureAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6657E049184752360028B14A /* LectureAppTests.m */; };
+		6657E054184757720028B14A /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6657E053184757720028B14A /* Storyboard.storyboard */; };
+		6657E09818476FF50028B14A /* Lecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6657E09718476FF50028B14A /* Lecture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		6657E045184752360028B14A /* LectureAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LectureAppTests-Info.plist"; sourceTree = "<group>"; };
 		6657E047184752360028B14A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6657E049184752360028B14A /* LectureAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LectureAppTests.m; sourceTree = "<group>"; };
+		6657E053184757720028B14A /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		6657E09618476FF50028B14A /* Lecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lecture.h; sourceTree = "<group>"; };
+		6657E09718476FF50028B14A /* Lecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lecture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,9 @@
 			children = (
 				6657E033184752360028B14A /* AppDelegate.h */,
 				6657E034184752360028B14A /* AppDelegate.m */,
+				6657E053184757720028B14A /* Storyboard.storyboard */,
+				6657E09618476FF50028B14A /* Lecture.h */,
+				6657E09718476FF50028B14A /* Lecture.m */,
 				6657E036184752360028B14A /* Images.xcassets */,
 				6657E02B184752360028B14A /* Supporting Files */,
 			);
@@ -221,6 +229,7 @@
 			files = (
 				6657E02F184752360028B14A /* InfoPlist.strings in Resources */,
 				6657E037184752360028B14A /* Images.xcassets in Resources */,
+				6657E054184757720028B14A /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6657E09818476FF50028B14A /* Lecture.m in Sources */,
 				6657E035184752360028B14A /* AppDelegate.m in Sources */,
 				6657E031184752360028B14A /* main.m in Sources */,
 			);
