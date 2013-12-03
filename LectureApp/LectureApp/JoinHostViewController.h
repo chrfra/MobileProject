@@ -1,5 +1,5 @@
 //
-//  FindHostViewController.h
+//  JoinHostViewController.h
 //  LectureApp
 //
 //  Created by Satu Peltola on 03/12/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FindHostViewController : UIViewController
+@interface JoinHostViewController : UITableViewController
 
 @end
