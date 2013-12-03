@@ -112,9 +112,10 @@ static NSString *ServiceCell = @"ServiceCell";
     [self stopBrowsing];
 }
 
+
+//Called when back button is pressed
 - (void)viewWillDisappear:(BOOL)animated{
     //[super viewWillDisappear:animated];
-    NSLog(@"Back button was pressed");
     if (self.isMovingFromParentViewController || self.isBeingDismissed) {
              [self stopBrowsing];
     }
@@ -129,6 +130,63 @@ static NSString *ServiceCell = @"ServiceCell";
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    // Fetch Service
+    NSNetService *service = [self.services objectAtIndex:[indexPath row]];
+    // Resolve Service
+    [service setDelegate:self];
+    [service resolveWithTimeout:30.0];
+}
+
+- (void)netService:(NSNetService *)service didNotResolve:(NSDictionary *)errorDict {
+    [service setDelegate:nil];
+}
+
+- (void)netServiceDidResolveAddress:(NSNetService *)service {
+    // Connect With Service
+    if ([self connectWithService:service]) {
+        NSLog(@"Did Connect with Service: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
+    } else {
+        NSLog(@"Unable to Connect with Service: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
+    }
+}
+
+
+- (BOOL)connectWithService:(NSNetService *)service {
+    BOOL _isConnected = NO;
+    // Copy Service Addresses
+    NSArray *addresses = [[service addresses] mutableCopy];
+    if (!self.socket || ![self.socket isConnected]) {
+        // Initialize Socket
+        self.socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+        // Connect
+        while (!_isConnected && [addresses count]) {
+            NSData *address = [addresses objectAtIndex:0];
+            NSError *error = nil;
+            if ([self.socket connectToAddress:address error:&error]) {
+                _isConnected = YES;
+            } else if (error) {
+                NSLog(@"Unable to connect to address. Error %@ with user info %@.", error, [error userInfo]);
+            }
+        }
+    } else {
+        _isConnected = [self.socket isConnected];
+    }
+    return _isConnected;
+}
+
+- (void)socket:(GCDAsyncSocket *)socket didConnectToHost:(NSString *)host port:(UInt16)port {
+    NSLog(@"Socket Did Connect to Host: %@ Port: %hu", host, port);
+    // Start Reading
+    [socket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
+}
+
+- (void)socketDidDisconnect:(GCDAsyncSocket *)socket withError:(NSError *)error {
+    NSLog(@"Socket Did Disconnect with Error %@ with User Info %@.", error, [error userInfo]);
+    [socket setDelegate:nil];
+    [self setSocket:nil];
+}
 
 /*
 // Override to support conditional editing of the table view.

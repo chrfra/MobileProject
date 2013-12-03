@@ -50,7 +50,7 @@
     // Start Listening for Incoming Connections
     NSError *error = nil;
     if ([self.socket acceptOnPort:0 error:&error]) {
-        // Initialize Service
+        // Initialize Service Notice: when name is not defined it uses the default of the computer
         self.service = [[NSNetService alloc] initWithDomain:@"local." type:@"_lectureApp._tcp." name:@"" port:[self.socket localPort]];
         // Configure Service
         [self.service setDelegate:self];
