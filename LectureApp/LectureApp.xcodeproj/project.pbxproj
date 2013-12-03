@@ -21,6 +21,11 @@
 		6657E04A184752360028B14A /* LectureAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6657E049184752360028B14A /* LectureAppTests.m */; };
 		6657E054184757720028B14A /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6657E053184757720028B14A /* Storyboard.storyboard */; };
 		6657E09818476FF50028B14A /* Lecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6657E09718476FF50028B14A /* Lecture.m */; };
+		669FA6BD184E30F300F4458E /* HostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669FA6BC184E30F300F4458E /* HostingViewController.m */; };
+		669FA6C0184E327100F4458E /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 669FA6BF184E327100F4458E /* GCDAsyncSocket.m */; };
+		669FA6C2184E331C00F4458E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669FA6C1184E331C00F4458E /* CFNetwork.framework */; };
+		669FA6C4184E332A00F4458E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669FA6C3184E332A00F4458E /* Security.framework */; };
+		669FA70F184E4A6200F4458E /* FindHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669FA70E184E4A6200F4458E /* FindHostViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,14 @@
 		6657E053184757720028B14A /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		6657E09618476FF50028B14A /* Lecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lecture.h; sourceTree = "<group>"; };
 		6657E09718476FF50028B14A /* Lecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lecture.m; sourceTree = "<group>"; };
+		669FA6BB184E30F300F4458E /* HostingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostingViewController.h; sourceTree = "<group>"; };
+		669FA6BC184E30F300F4458E /* HostingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostingViewController.m; sourceTree = "<group>"; };
+		669FA6BE184E327100F4458E /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		669FA6BF184E327100F4458E /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		669FA6C1184E331C00F4458E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		669FA6C3184E332A00F4458E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		669FA70D184E4A6200F4458E /* FindHostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindHostViewController.h; path = ../FindHostViewController.h; sourceTree = "<group>"; };
+		669FA70E184E4A6200F4458E /* FindHostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindHostViewController.m; path = ../FindHostViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669FA6C4184E332A00F4458E /* Security.framework in Frameworks */,
+				669FA6C2184E331C00F4458E /* CFNetwork.framework in Frameworks */,
 				6657E027184752360028B14A /* CoreGraphics.framework in Frameworks */,
 				6657E029184752360028B14A /* UIKit.framework in Frameworks */,
 				6657E025184752360028B14A /* Foundation.framework in Frameworks */,
@@ -101,6 +116,8 @@
 		6657E023184752360028B14A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				669FA6C3184E332A00F4458E /* Security.framework */,
+				669FA6C1184E331C00F4458E /* CFNetwork.framework */,
 				6657E024184752360028B14A /* Foundation.framework */,
 				6657E026184752360028B14A /* CoreGraphics.framework */,
 				6657E028184752360028B14A /* UIKit.framework */,
@@ -115,6 +132,12 @@
 				6657E033184752360028B14A /* AppDelegate.h */,
 				6657E034184752360028B14A /* AppDelegate.m */,
 				6657E053184757720028B14A /* Storyboard.storyboard */,
+				669FA70D184E4A6200F4458E /* FindHostViewController.h */,
+				669FA70E184E4A6200F4458E /* FindHostViewController.m */,
+				669FA6BB184E30F300F4458E /* HostingViewController.h */,
+				669FA6BE184E327100F4458E /* GCDAsyncSocket.h */,
+				669FA6BF184E327100F4458E /* GCDAsyncSocket.m */,
+				669FA6BC184E30F300F4458E /* HostingViewController.m */,
 				6657E09618476FF50028B14A /* Lecture.h */,
 				6657E09718476FF50028B14A /* Lecture.m */,
 				6657E036184752360028B14A /* Images.xcassets */,
@@ -249,6 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6657E09818476FF50028B14A /* Lecture.m in Sources */,
+				669FA70F184E4A6200F4458E /* FindHostViewController.m in Sources */,
+				669FA6C0184E327100F4458E /* GCDAsyncSocket.m in Sources */,
+				669FA6BD184E30F300F4458E /* HostingViewController.m in Sources */,
 				6657E035184752360028B14A /* AppDelegate.m in Sources */,
 				6657E031184752360028B14A /* main.m in Sources */,
 			);
@@ -453,6 +479,7 @@
 				6657E04F184752360028B14A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6657E050184752360028B14A /* Build configuration list for PBXNativeTarget "LectureAppTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +488,7 @@
 				6657E052184752360028B14A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

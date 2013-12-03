@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="47" y="39"/>
         </scene>
-        <!--View Controller-->
+        <!--Find Host View Controller-->
         <scene sceneID="uji-2f-At1">
             <objects>
-                <viewController id="7lk-JN-oWV" sceneMemberID="viewController">
+                <viewController id="7lk-JN-oWV" customClass="FindHostViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4UZ-bR-DAi"/>
                         <viewControllerLayoutGuide type="bottom" id="zPV-tu-NDy"/>
@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="543" y="-251"/>
         </scene>
-        <!--View Controller-->
+        <!--Hosting View Controller-->
         <scene sceneID="18h-fY-ZA5">
             <objects>
-                <viewController id="c6i-EV-Cgw" sceneMemberID="viewController">
+                <viewController id="c6i-EV-Cgw" customClass="HostingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CoU-Q0-Py9"/>
                         <viewControllerLayoutGuide type="bottom" id="6ix-s0-hNo"/>
