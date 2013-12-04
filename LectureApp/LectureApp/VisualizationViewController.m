@@ -33,10 +33,31 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    //Create one splash
-    UIView *splash = [[Splash alloc] initWithFrame: CGRectMake ( self.view.frame.size.width/2, self.view.frame.size.height/2, 150, 150)];
-    //Show splash on screen
-    [self.view addSubview:splash];
+    
+    _splashes = [NSMutableArray array];
+    
+    //Create and store 10 splashes
+    for(int i = 0; i < 10; i++)
+    {
+        //Maximum width & height that a splash can assume, make into global static variable
+        int splashMaxWidth = 150;
+        
+        //Randomly assign x and y coordinate for the splash so that it is entirely on the screen
+        int x = arc4random() % (int) (self.view.frame.size.width);
+        int y = arc4random() % (int) (self.view.frame.size.width);
+        
+        //Create one splash
+        UIView *splash = [[Splash alloc] initWithFrame: CGRectMake ( x, y, splashMaxWidth, splashMaxWidth)];
+        
+        //Add splash to array of splashes
+        [_splashes addObject:splash];
+    }
+
+    //Display all splases on screen
+    for (Splash *splash in _splashes) {
+        [self.view addSubview:splash];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning

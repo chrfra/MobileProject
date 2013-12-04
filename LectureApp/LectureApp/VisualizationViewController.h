@@ -10,4 +10,6 @@
 
 @interface VisualizationViewController : UIViewController
 
+@property (strong,nonatomic) NSMutableArray *splashes;
+
 @end
