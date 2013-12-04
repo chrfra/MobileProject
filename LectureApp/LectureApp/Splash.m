@@ -30,8 +30,11 @@
 }
 
 - (void)setUp {
+    self.backgroundColor = [UIColor clearColor];
     self.color = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.5];
 }
+
+
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

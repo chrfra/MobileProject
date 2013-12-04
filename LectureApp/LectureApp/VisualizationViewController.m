@@ -7,6 +7,7 @@
 //
 
 #import "VisualizationViewController.h"
+#import "Splash.h"
 
 @interface VisualizationViewController ()
 
@@ -19,6 +20,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+
     }
     return self;
 }
@@ -27,6 +29,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    //Create one splash
+    UIView *splash = [[Splash alloc] initWithFrame: CGRectMake ( self.view.frame.size.width/2, self.view.frame.size.height/2, 150, 150)];
+    //Show splash on screen
+    [self.view addSubview:splash];
 }
 
 - (void)didReceiveMemoryWarning
