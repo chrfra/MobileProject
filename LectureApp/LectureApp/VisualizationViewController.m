@@ -57,6 +57,8 @@
     for (Splash *splash in _splashes) {
         [self.view addSubview:splash];
     }
+    NSLog(@"Rendering splashes ");
+    [self fade];
 
 }
 
@@ -64,6 +66,25 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+//Animations
+
+//Fades out all splashes over time
+- (void)fade{
+    for (Splash *splash in _splashes) {
+        //Fade animation
+        [UIView animateWithDuration:5.0
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveEaseIn
+                         animations:^{
+                             splash.alpha = 0.0;
+                         }
+                         completion:^(BOOL finished){
+                         }];
+    }
+
 }
 
 @end
