@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Satu Peltola. All rights reserved.
 //
 
+
+//This is Satu's test comment
+
 #import "JoinHostViewController.h"
 
 @interface JoinHostViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate, GCDAsyncSocketDelegate>
