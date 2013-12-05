@@ -44,7 +44,7 @@
         
         //Randomly assign x and y coordinate for the splash so that it is entirely on the screen
         int x = arc4random() % (int) (self.view.frame.size.width);
-        int y = arc4random() % (int) (self.view.frame.size.width);
+        int y = arc4random() % (int) (self.view.frame.size.height);
         
         //Create one splash
         UIView *splash = [[Splash alloc] initWithFrame: CGRectMake ( x, y, splashMaxWidth, splashMaxWidth)];
