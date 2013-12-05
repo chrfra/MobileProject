@@ -15,6 +15,9 @@
 
 @implementation VisualizationViewController
 
+#define kSplashMaxWidth 150 //Maximum width & height that a splash can assume, make into global static variable
+#define kSplashInitialWidth 50 //Maximum width & height that a splash can assume, make into global static variable
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,15 +42,13 @@
     //Create and store 10 splashes
     for(int i = 0; i < 10; i++)
     {
-        //Maximum width & height that a splash can assume, make into global static variable
-        int splashMaxWidth = 150;
         
         //Randomly assign x and y coordinate for the splash so that it is entirely on the screen
         int x = arc4random() % (int) (self.view.frame.size.width);
         int y = arc4random() % (int) (self.view.frame.size.height);
         
         //Create one splash
-        UIView *splash = [[Splash alloc] initWithFrame: CGRectMake ( x, y, splashMaxWidth, splashMaxWidth)];
+        UIView *splash = [[Splash alloc] initWithFrame: CGRectMake ( x, y, kSplashInitialWidth, kSplashInitialWidth)];
         
         //Add splash to array of splashes
         [_splashes addObject:splash];
@@ -58,8 +59,11 @@
         [self.view addSubview:splash];
     }
     NSLog(@"Rendering splashes ");
+    
+    //Start fading Splashes
     [self fade];
-
+    //Start growing Splashes
+    [self grow];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,13 +73,20 @@
 }
 
 
-//Animations
+/*
+ Animations
+ */
+
+#define kFadeDuration 5   //How long fading splash will take
+#define kResizeDuration 5 //How long resizing splash will take
+#define kGrowFactor 3     //How much splash should grow by
+#define kShrinkFactor 3   //How much splash should shrink by
 
 //Fades out all splashes over time
 - (void)fade{
     for (Splash *splash in _splashes) {
         //Fade animation
-        [UIView animateWithDuration:5.0
+        [UIView animateWithDuration:kFadeDuration
                               delay: 0.0
                             options: UIViewAnimationOptionCurveEaseIn
                          animations:^{
@@ -86,5 +97,16 @@
     }
 
 }
+
+//Grows all splashes
+- (void)grow {
+    for (Splash *splash in _splashes) {
+        CGAffineTransform transform = CGAffineTransformScale(splash.transform, kGrowFactor, kGrowFactor);
+        [UIView animateWithDuration:kResizeDuration animations:^{
+            splash.transform = transform;
+        }];
+    }
+}
+
 
 @end
