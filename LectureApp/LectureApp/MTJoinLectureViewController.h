@@ -1,0 +1,13 @@
+//
+//  MTJoinLectureViewController.h
+//  LectureApp
+//
+//  Created by Satu Peltola on 09/12/13.
+//  Copyright (c) 2013 Satu Peltola. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@protocol MTJoinLectureViewController <NSObject>
+
+@end
