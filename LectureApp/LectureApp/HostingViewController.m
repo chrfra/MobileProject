@@ -79,7 +79,7 @@
     // Read Data from Socket
     [newSocket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
     // Create Packet
-    NSString *message = @"This is a proof of concept.";
+    NSString *message = @"Our packet was sent! And it works! Awesome! "; //message
     MTPacket *packet = [[MTPacket alloc] initWithData:message type:0 action:0];
     // Send Packet
     [self sendPacket:packet];

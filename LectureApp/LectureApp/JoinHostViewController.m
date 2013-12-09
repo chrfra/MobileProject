@@ -198,7 +198,7 @@ static NSString *ServiceCell = @"ServiceCell";
         [socket readDataToLength:bodyLength withTimeout:-1.0 tag:1];
     } else if (tag == 1) {
         [self parseBody:data];
-        [socket readDataToLength:sizeof(uint64_t) withTimeout:30.0 tag:0]; //Why is it 30?
+        [socket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0]; //Why is it 30?
     }
 }
 
