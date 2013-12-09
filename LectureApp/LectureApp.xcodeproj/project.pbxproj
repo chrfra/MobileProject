@@ -27,6 +27,7 @@
 		669FA6C4184E332A00F4458E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669FA6C3184E332A00F4458E /* Security.framework */; };
 		669FA712184E505400F4458E /* JoinHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669FA711184E505400F4458E /* JoinHostViewController.m */; };
 		66E841E31855C60400478E81 /* MTPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E841E21855C60400478E81 /* MTPacket.m */; };
+		66E841EB18560AB300478E81 /* ConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E841EA18560AB300478E81 /* ConnectionController.m */; };
 		AA482F22184F3256003CCF3F /* Splash.m in Sources */ = {isa = PBXBuildFile; fileRef = AA482F21184F3256003CCF3F /* Splash.m */; };
 		AA482F25184F36F6003CCF3F /* VisualizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA482F24184F36F6003CCF3F /* VisualizationViewController.m */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,8 @@
 		669FA711184E505400F4458E /* JoinHostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinHostViewController.m; sourceTree = "<group>"; };
 		66E841E11855C60400478E81 /* MTPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPacket.h; sourceTree = "<group>"; };
 		66E841E21855C60400478E81 /* MTPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPacket.m; sourceTree = "<group>"; };
+		66E841E918560AB300478E81 /* ConnectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionController.h; sourceTree = "<group>"; };
+		66E841EA18560AB300478E81 /* ConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionController.m; sourceTree = "<group>"; };
 		AA482F20184F3256003CCF3F /* Splash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Splash.h; sourceTree = "<group>"; };
 		AA482F21184F3256003CCF3F /* Splash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Splash.m; sourceTree = "<group>"; };
 		AA482F23184F36F6003CCF3F /* VisualizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualizationViewController.h; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				6657E033184752360028B14A /* AppDelegate.h */,
+				66E841E918560AB300478E81 /* ConnectionController.h */,
+				66E841EA18560AB300478E81 /* ConnectionController.m */,
 				6657E034184752360028B14A /* AppDelegate.m */,
 				6657E053184757720028B14A /* Storyboard.storyboard */,
 				AA482F23184F36F6003CCF3F /* VisualizationViewController.h */,
@@ -287,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6657E09818476FF50028B14A /* Lecture.m in Sources */,
+				66E841EB18560AB300478E81 /* ConnectionController.m in Sources */,
 				AA482F25184F36F6003CCF3F /* VisualizationViewController.m in Sources */,
 				669FA712184E505400F4458E /* JoinHostViewController.m in Sources */,
 				AA482F22184F3256003CCF3F /* Splash.m in Sources */,

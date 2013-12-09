@@ -11,6 +11,7 @@
 
 #import "JoinHostViewController.h"
 #import "MTPacket.h"
+#import "ConnectionController.h"
 
 @interface JoinHostViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate, GCDAsyncSocketDelegate>
 @property (strong, nonatomic) GCDAsyncSocket *socket;
@@ -139,8 +140,14 @@ static NSString *ServiceCell = @"ServiceCell";
     // Fetch Service
     NSNetService *service = [self.services objectAtIndex:[indexPath row]];
     // Resolve Service
-    [service setDelegate:self];
-    [service resolveWithTimeout:30.0];
+    
+    //These were edited away in reconstruction!
+    //[service setDelegate:self];
+    //[service resolveWithTimeout:30.0];
+    
+    //Sending the service to ConnectionController
+    [[ConnectionController sharedConnectionController] socketWasSelected:service];
+    
 }
 
 - (void)netService:(NSNetService *)service didNotResolve:(NSDictionary *)errorDict {
@@ -184,6 +191,7 @@ static NSString *ServiceCell = @"ServiceCell";
     NSLog(@"Socket Did Connect to Host: %@ Port: %hu", host, port);
     // Start Reading
     [socket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
+    
 }
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)socket withError:(NSError *)error {
@@ -198,7 +206,7 @@ static NSString *ServiceCell = @"ServiceCell";
         [socket readDataToLength:bodyLength withTimeout:-1.0 tag:1];
     } else if (tag == 1) {
         [self parseBody:data];
-        [socket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0]; //Why is it 30?
+        [socket readDataToLength:sizeof(uint64_t) withTimeout:-1 tag:0]; //Why is it 30?
     }
 }
 
