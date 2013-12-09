@@ -5,6 +5,8 @@
 //  Created by Christian Fransson on 04/12/13.
 //  Copyright (c) 2013 Satu Peltola. All rights reserved.
 //
+//TODO 2 types of drops
+//Buttons
 
 #import "VisualizationViewController.h"
 #import "Splash.h"
@@ -44,8 +46,10 @@
     {
         
         //Randomly assign x and y coordinate for the splash so that it is entirely on the screen
-        int x = arc4random() % (int) (self.view.frame.size.width);
-        int y = arc4random() % (int) (self.view.frame.size.height);
+        //Generate coordinates within a defined domain, to not have the splashes be cut off by the edges of the screen
+        // Syntax: int position = (arc4random() % 5) + 1; // Creates a random number between 1 and 5.
+        int x = (arc4random() % ( (int)(self.view.frame.size.width - (kSplashMaxWidth/2)) ) ) + (kSplashMaxWidth/2);
+        int y = (arc4random() % ( (int)(self.view.frame.size.height - (kSplashMaxWidth/2)) ) ) + (kSplashMaxWidth/2);
         
         //Create one splash
         UIView *splash = [[Splash alloc] initWithFrame: CGRectMake ( x, y, kSplashInitialWidth, kSplashInitialWidth)];
@@ -58,7 +62,6 @@
     for (Splash *splash in _splashes) {
         [self.view addSubview:splash];
     }
-    NSLog(@"Rendering splashes ");
     
     //Start fading Splashes
     [self fade];
