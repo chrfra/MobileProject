@@ -10,11 +10,11 @@
 
 @implementation Splash
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame tooDifficult:(BOOL)tooDifficult
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setUp];
+        [self setUp:tooDifficult];
     }
     return self;
 }
@@ -24,14 +24,18 @@
     self = [super initWithCoder:aDecoder];
     
     if(self){
-        [self setUp];
+        [self setUp:YES];
     }
     return self;
 }
 
-- (void)setUp {
+- (void)setUp:(BOOL)tooDifficult {
     self.backgroundColor = [UIColor clearColor];
-    self.color = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.5];
+    if(tooDifficult){
+        self.color = [UIColor colorWithRed:255 green:0 blue:0 alpha:0.5];
+    }else{
+        self.color = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.5];
+    }
 }
 
 

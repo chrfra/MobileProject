@@ -10,6 +10,8 @@
 
 @interface Splash : UIView
 
+- (id)initWithFrame:(CGRect)frame tooDifficult:(BOOL)tooDifficult;
+
 @property (nonatomic, strong) UIColor *color;
 
 @end
