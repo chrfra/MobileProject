@@ -44,12 +44,12 @@
     //Create and store 10 splashes
     for(int i = 0; i < 10; i++)
     {
-        
         //Randomly assign x and y coordinate for the splash so that it is entirely on the screen
         //Generate coordinates within a defined domain, to not have the splashes be cut off by the edges of the screen
         // Syntax: int position = (arc4random() % 5) + 1; // Creates a random number between 1 and 5.
-        int x = (arc4random() % ( (int)(self.view.frame.size.width - (kSplashMaxWidth/2)) ) ) + (kSplashMaxWidth/2);
-        int y = (arc4random() % ( (int)(self.view.frame.size.height - (kSplashMaxWidth/2)) ) ) + (kSplashMaxWidth/2);
+        //Don't need to add "+ (kSplashMaxWidth/2)" to the end of the calculation since the x and y coordinates sent to CGRectmake are the top left of the rectangle containing the circle, whereby you have to add (kSplashMaxWidth/2) to get the center of the circle
+        int x = (arc4random() % ( (int)(self.view.frame.size.width - (kSplashMaxWidth/2)) ) );
+        int y = (arc4random() % ( (int)(self.view.frame.size.height - (kSplashMaxWidth)) ) ) + (kSplashMaxWidth/2);
         
         //Create one splash
         UIView *splash = [[Splash alloc] initWithFrame: CGRectMake ( x, y, kSplashInitialWidth, kSplashInitialWidth)];
