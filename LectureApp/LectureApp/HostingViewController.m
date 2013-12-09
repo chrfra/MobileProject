@@ -7,6 +7,7 @@
 //
 
 #import "HostingViewController.h"
+#import "MTPacket.h"
 
 @interface HostingViewController ()  <NSNetServiceDelegate, GCDAsyncSocketDelegate>
 
@@ -70,12 +71,18 @@
     NSLog(@"Failed to Publish Service: domain(%@) type(%@) name(%@) - %@", [service domain], [service type], [service name], errorDict);
 }
 
+
 - (void)socket:(GCDAsyncSocket *)socket didAcceptNewSocket:(GCDAsyncSocket *)newSocket {
     NSLog(@"Accepted New Socket from %@:%hu", [newSocket connectedHost], [newSocket connectedPort]);
     // Socket
     [self setSocket:newSocket];
     // Read Data from Socket
     [newSocket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
+    // Create Packet
+    NSString *message = @"This is a proof of concept.";
+    MTPacket *packet = [[MTPacket alloc] initWithData:message type:0 action:0];
+    // Send Packet
+    [self sendPacket:packet];
 }
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)socket withError:(NSError *)error {
@@ -84,6 +91,22 @@
         [self.socket setDelegate:nil];
         [self setSocket:nil];
     }
+}
+
+- (void)sendPacket:(MTPacket *)packet {
+    // Encode Packet Data
+    NSMutableData *packetData = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:packetData];
+    [archiver encodeObject:packet forKey:@"packet"];
+    [archiver finishEncoding];
+    // Initialize Buffer
+    NSMutableData *buffer = [[NSMutableData alloc] init];
+    // Fill Buffer
+    uint64_t headerLength = [packetData length];
+    [buffer appendBytes:&headerLength length:sizeof(uint64_t)];
+    [buffer appendBytes:[packetData bytes] length:[packetData length]];
+    // Write Buffer
+    [self.socket writeData:buffer withTimeout:-1.0 tag:0];
 }
 
 

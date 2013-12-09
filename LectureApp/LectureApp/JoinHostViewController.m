@@ -10,6 +10,7 @@
 //This is Satu's test comment
 
 #import "JoinHostViewController.h"
+#import "MTPacket.h"
 
 @interface JoinHostViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate, GCDAsyncSocketDelegate>
 @property (strong, nonatomic) GCDAsyncSocket *socket;
@@ -190,6 +191,34 @@ static NSString *ServiceCell = @"ServiceCell";
     [socket setDelegate:nil];
     [self setSocket:nil];
 }
+
+- (void)socket:(GCDAsyncSocket *)socket didReadData:(NSData *)data withTag:(long)tag {
+    if (tag == 0) {
+        uint64_t bodyLength = [self parseHeader:data];
+        [socket readDataToLength:bodyLength withTimeout:-1.0 tag:1];
+    } else if (tag == 1) {
+        [self parseBody:data];
+        [socket readDataToLength:sizeof(uint64_t) withTimeout:30.0 tag:0]; //Why is it 30?
+    }
+}
+
+- (uint64_t)parseHeader:(NSData *)data {
+    uint64_t headerLength = 0;
+    memcpy(&headerLength, [data bytes], sizeof(uint64_t));
+    return headerLength;
+}
+
+
+- (void)parseBody:(NSData *)data {
+    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+    MTPacket *packet = [unarchiver decodeObjectForKey:@"packet"];
+    [unarchiver finishDecoding];
+    NSLog(@"Packet Data > %@", packet.data);
+    NSLog(@"Packet Type > %i", packet.type);
+    NSLog(@"Packet Action > %i", packet.action);
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.
