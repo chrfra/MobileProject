@@ -75,13 +75,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5bM-Mn-d42">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5bM-Mn-d42">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5bM-Mn-d42" id="hbb-Mb-w3t">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="7lk-JN-oWV" kind="push" id="TkL-Au-onP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -95,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="545" y="-332"/>
         </scene>
-        <!--Find Host View Controller-->
+        <!--Vote View Controller-->
         <scene sceneID="uji-2f-At1">
             <objects>
-                <viewController id="7lk-JN-oWV" customClass="FindHostViewController" sceneMemberID="viewController">
+                <viewController id="7lk-JN-oWV" customClass="VoteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4UZ-bR-DAi"/>
                         <viewControllerLayoutGuide type="bottom" id="zPV-tu-NDy"/>
@@ -121,15 +124,23 @@
                                 <state key="normal" title="We already know this!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tooEasy:" destination="7lk-JN-oWV" eventType="touchUpInside" id="Sa9-Kk-DDC"/>
+                                    <action selector="tooEasyPressed:" destination="7lk-JN-oWV" eventType="touchDown" id="4YY-dH-N8v"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="BEU-Md-8Pz"/>
+                    <connections>
+                        <outlet property="tooDifficult" destination="6Lk-JZ-Vcz" id="s8N-o0-k0H"/>
+                        <outlet property="tooEasy" destination="Vou-H8-dAG" id="Jzw-bu-qhV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JlQ-cE-HHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905" y="-315"/>
+            <point key="canvasLocation" x="987" y="-323"/>
         </scene>
         <!--Hosting View Controller-->
         <scene sceneID="18h-fY-ZA5">

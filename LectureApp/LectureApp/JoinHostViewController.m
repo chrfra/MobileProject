@@ -80,6 +80,10 @@ static NSString *ServiceCell = @"ServiceCell";
     // Configure Cell
     [cell.textLabel setText:[service name]];
     return cell;
+    
+    
+    
+    
 }
 
 
@@ -148,8 +152,17 @@ static NSString *ServiceCell = @"ServiceCell";
     //Sending the service to ConnectionController
     [[ConnectionController sharedConnectionController] socketWasSelected:service];
     
+    
+    
+    //
+    
 }
 
+
+/** 
+ 
+THIS IS OLD CODE - NOW MOVED TO CONNECTION CONTROLLER
+ 
 - (void)netService:(NSNetService *)service didNotResolve:(NSDictionary *)errorDict {
     [service setDelegate:nil];
 }
