@@ -12,8 +12,10 @@
 @interface ConnectionController ()  <NSNetServiceDelegate, NSNetServiceBrowserDelegate, GCDAsyncSocketDelegate>
 
 @property (strong, nonatomic) GCDAsyncSocket *socket;
-@property (strong, nonatomic) NSMutableArray *services;
-@property (strong, nonatomic) NSNetServiceBrowser *serviceBrowser;
+
+//These are probably not needed:
+//@property (strong, nonatomic) NSMutableArray *services;
+//@property (strong, nonatomic) NSNetServiceBrowser *serviceBrowser;
 
 @end
 
@@ -132,7 +134,7 @@ static ConnectionController *sharedconnectioncontroller = nil;
 -(void)tooEasy{
     NSLog(@"ConnectionController tooEasy called!");
     
-    NSString *message = @"Sent message: I just wanted to say this is too easy"; //message
+    NSString *message = @"Message: too easy"; //message
     MTPacket *packet = [[MTPacket alloc] initWithData:message type:0 action:0];
     // Send Packet
     [self sendPacket:packet];

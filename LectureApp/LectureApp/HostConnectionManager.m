@@ -1,62 +1,70 @@
 //
-//  HostingViewController.m
+//  HostConnectionManager.m
 //  LectureApp
 //
-//  Created by Satu Peltola on 03/12/13.
+//  Created by Satu Peltola on 10/12/13.
 //  Copyright (c) 2013 Satu Peltola. All rights reserved.
 //
 
-#import "HostingViewController.h"
-#import "MTPacket.h"
 #import "HostConnectionManager.h"
+#import "MTPacket.h"
 
-@interface HostingViewController ()  <NSNetServiceDelegate, GCDAsyncSocketDelegate>
+@interface HostConnectionManager ()  <NSNetServiceDelegate, NSNetServiceBrowserDelegate, GCDAsyncSocketDelegate>
+
 
 @property (strong, nonatomic) NSNetService *service;
-@property (strong, nonatomic) GCDAsyncSocket *socket;
+
+@property (strong, nonatomic) GCDAsyncSocket *listening_socket;
+
+//Now instead of one variable we have an array of sockets.
+@property (strong, nonatomic) NSMutableArray *sockets;
+
+
 @end
 
 
+@implementation HostConnectionManager
 
 
-@implementation HostingViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+static HostConnectionManager *sharedhostconnectionmanager = nil;
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
++ (void)initialize {
     
-    // Start Broadcast by calling start method for HostConnectionManager.
-    //[self startBroadcast];
-    [[HostConnectionManager sharedhostconnectionmanager] start];
+    sharedhostconnectionmanager = [[HostConnectionManager alloc] init];
+    
 }
 
-- (void)didReceiveMemoryWarning
++ (HostConnectionManager *)sharedhostconnectionmanager
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return sharedhostconnectionmanager;
 }
 
-/**
- This is old connection stuff, now moved to HostConnectionManager.
- 
+
+- (id)init{
+    
+    self=[super init];
+    return self;
+    
+}
+
+-(void)start{
+    
+    [self startBroadcast];
+    
+}
+
+
 - (void)startBroadcast {
+    
     // Initialize GCDAsyncSocket
-    self.socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+    self.listening_socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     // Start Listening for Incoming Connections
     NSError *error = nil;
-    if ([self.socket acceptOnPort:0 error:&error]) {
+    if ([self.listening_socket acceptOnPort:0 error:&error]) {
         // Initialize Service Notice: when name is not defined it uses the default of the computer
-        self.service = [[NSNetService alloc] initWithDomain:@"local." type:@"_lectureApp._tcp." name:@"" port:[self.socket localPort]];
+        self.service = [[NSNetService alloc] initWithDomain:@"local." type:@"_lectureApp._tcp." name:@"" port:[self.listening_socket localPort]];
         // Configure Service
         [self.service setDelegate:self];
         // Publish Service
@@ -65,7 +73,6 @@
         NSLog(@"Unable to create socket. Error %@ with user info %@.", error, [error userInfo]);
     }
 }
-
 
 - (void)netServiceDidPublish:(NSNetService *)service {
     NSLog(@"Bonjour Service Published: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
@@ -78,8 +85,11 @@
 
 - (void)socket:(GCDAsyncSocket *)socket didAcceptNewSocket:(GCDAsyncSocket *)newSocket {
     NSLog(@"Accepted New Socket from %@:%hu", [newSocket connectedHost], [newSocket connectedPort]);
-    // Socket
-    [self setSocket:newSocket];
+    
+    // Instead of replacing the listening socket we add it to the mutable array
+    //[self setSocket:newSocket];
+    [self.sockets addObject:newSocket];
+    
     // Read Data from Socket
     [newSocket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
     
@@ -91,30 +101,6 @@
     //[self sendPacket:packet];
 }
 
-- (void)socketDidDisconnect:(GCDAsyncSocket *)socket withError:(NSError *)error {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    if (self.socket == socket) {
-        [self.socket setDelegate:nil];
-        [self setSocket:nil];
-    }
-}
-
-- (void)sendPacket:(MTPacket *)packet {
-    // Encode Packet Data
-    NSMutableData *packetData = [[NSMutableData alloc] init];
-    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:packetData];
-    [archiver encodeObject:packet forKey:@"packet"];
-    [archiver finishEncoding];
-    // Initialize Buffer
-    NSMutableData *buffer = [[NSMutableData alloc] init];
-    // Fill Buffer
-    uint64_t headerLength = [packetData length];
-    [buffer appendBytes:&headerLength length:sizeof(uint64_t)];
-    [buffer appendBytes:[packetData bytes] length:[packetData length]];
-    // Write Buffer
-    [self.socket writeData:buffer withTimeout:-1.0 tag:0];
-}
-
 - (void)socket:(GCDAsyncSocket *)socket didReadData:(NSData *)data withTag:(long)tag {
     if (tag == 0) {
         uint64_t bodyLength = [self parseHeader:data];
@@ -124,6 +110,7 @@
         [socket readDataToLength:sizeof(uint64_t) withTimeout:-1 tag:0]; //Why is it 30?
     }
 }
+
 
 - (uint64_t)parseHeader:(NSData *)data {
     uint64_t headerLength = 0;
@@ -141,6 +128,6 @@
     NSLog(@"Packet Action > %i", packet.action);
 }
 
-*/
-@end
 
+
+@end
