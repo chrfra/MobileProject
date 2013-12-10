@@ -29,6 +29,7 @@
 		66E841E31855C60400478E81 /* MTPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E841E21855C60400478E81 /* MTPacket.m */; };
 		66E841EB18560AB300478E81 /* ConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E841EA18560AB300478E81 /* ConnectionController.m */; };
 		66E841EE185615EC00478E81 /* VoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E841ED185615EC00478E81 /* VoteViewController.m */; };
+		66E8422F18573F0B00478E81 /* HostConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E8422E18573F0B00478E81 /* HostConnectionManager.m */; };
 		AA482F22184F3256003CCF3F /* Splash.m in Sources */ = {isa = PBXBuildFile; fileRef = AA482F21184F3256003CCF3F /* Splash.m */; };
 		AA482F25184F36F6003CCF3F /* VisualizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA482F24184F36F6003CCF3F /* VisualizationViewController.m */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,8 @@
 		66E841EA18560AB300478E81 /* ConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionController.m; sourceTree = "<group>"; };
 		66E841EC185615EC00478E81 /* VoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoteViewController.h; sourceTree = "<group>"; };
 		66E841ED185615EC00478E81 /* VoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoteViewController.m; sourceTree = "<group>"; };
+		66E8422D18573F0B00478E81 /* HostConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostConnectionManager.h; sourceTree = "<group>"; };
+		66E8422E18573F0B00478E81 /* HostConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostConnectionManager.m; sourceTree = "<group>"; };
 		AA482F20184F3256003CCF3F /* Splash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Splash.h; sourceTree = "<group>"; };
 		AA482F21184F3256003CCF3F /* Splash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Splash.m; sourceTree = "<group>"; };
 		AA482F23184F36F6003CCF3F /* VisualizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualizationViewController.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				669FA711184E505400F4458E /* JoinHostViewController.m */,
 				669FA6BB184E30F300F4458E /* HostingViewController.h */,
 				669FA6BC184E30F300F4458E /* HostingViewController.m */,
+				66E8422D18573F0B00478E81 /* HostConnectionManager.h */,
+				66E8422E18573F0B00478E81 /* HostConnectionManager.m */,
 				AA482F20184F3256003CCF3F /* Splash.h */,
 				AA482F21184F3256003CCF3F /* Splash.m */,
 				669FA6BE184E327100F4458E /* GCDAsyncSocket.h */,
@@ -303,6 +308,7 @@
 				669FA712184E505400F4458E /* JoinHostViewController.m in Sources */,
 				AA482F22184F3256003CCF3F /* Splash.m in Sources */,
 				669FA6C0184E327100F4458E /* GCDAsyncSocket.m in Sources */,
+				66E8422F18573F0B00478E81 /* HostConnectionManager.m in Sources */,
 				66E841E31855C60400478E81 /* MTPacket.m in Sources */,
 				669FA6BD184E30F300F4458E /* HostingViewController.m in Sources */,
 				6657E035184752360028B14A /* AppDelegate.m in Sources */,
