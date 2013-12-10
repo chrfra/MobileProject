@@ -130,12 +130,10 @@ static HostConnectionManager *sharedhostconnectionmanager = nil;
     NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
     MTPacket *packet = [unarchiver decodeObjectForKey:@"packet"];
     [unarchiver finishDecoding];
-    NSLog(@"Packet Data > %@", packet.data);
     
     BOOL tooDifficult = packet.data;
     [self.visualisation addSplash:tooDifficult];
-    
-    
+
     //NSLog(@"Packet Type > %i", packet.type);
     //NSLog(@"Packet Action > %i", packet.action);
 }

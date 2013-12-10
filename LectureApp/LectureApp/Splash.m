@@ -56,8 +56,39 @@
  // Fill the path before stroking it so that the fill
  // color does not obscure the stroked line.
  [aPath fill];
-
 }
+
+
+/*
+ Animations
+ */
+
+#define kFadeDuration 30   //How long fading splash will take
+#define kResizeDuration 30//How long resizing splash will take
+#define kGrowFactor 3     //How much splash should grow by
+#define kShrinkFactor 3   //How much splash should shrink by
+
+//Fades out all splashes over time
+- (void)fade{
+        //Fade animation
+        [UIView animateWithDuration:kFadeDuration
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveEaseIn
+                         animations:^{
+                             self.alpha = 0.0;
+                         }
+                         completion:^(BOOL finished){
+                         }];
+}
+
+//Grows all splashes
+- (void)grow {
+        CGAffineTransform transform = CGAffineTransformScale(self.transform, kGrowFactor, kGrowFactor);
+        [UIView animateWithDuration:kResizeDuration animations:^{
+            self.transform = transform;
+        }];
+}
+
 
 
 @end

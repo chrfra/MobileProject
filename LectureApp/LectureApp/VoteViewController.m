@@ -37,10 +37,11 @@
 }
 
 - (IBAction)tooEasy:(UIButton *)sender {
-    NSLog(@"TooEasy!");
+    [[ConnectionController sharedConnectionController] sendVote:NO];
     
-    [[ConnectionController sharedConnectionController] tooEasy];
-    
+}
+- (IBAction)tooDifficult:(UIButton *)sender {
+        [[ConnectionController sharedConnectionController] sendVote:YES];
 }
 
 @end

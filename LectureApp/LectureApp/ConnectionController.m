@@ -133,11 +133,9 @@ static ConnectionController *sharedconnectioncontroller = nil;
 
 
 //Called from VoteViewController when "tooEasy"-button is pressed
--(void)tooEasy{
-    NSLog(@"ConnectionController tooEasy called!");
-    
-    //
-    MTPacket *packet = [[MTPacket alloc] initWithData:NO];
+-(void)tooDifficult:(BOOL)tooDifficult{
+    if(tooDifficult){};
+    MTPacket *packet = [[MTPacket alloc] initWithData:YES];
     // Send Packet
     [self sendPacket:packet];
 

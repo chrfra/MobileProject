@@ -18,7 +18,7 @@ NSString * const MTPacketKeyAction = @"action";
 //init changed, old one:
 //- (id)initWithData:(id)data type:(MTPacketType)type action:(MTPacketAction)action {
 
-- (id)initWithData:(id)data {
+- (id)initWithData:(BOOL)data {
     self = [super init];
     if (self) {
         self.data = data;
@@ -30,7 +30,7 @@ NSString * const MTPacketKeyAction = @"action";
 #pragma mark -
 #pragma mark NSCoding Protocol
 - (void)encodeWithCoder:(NSCoder *)coder {
-    [coder encodeObject:self.data forKey:MTPacketKeyData];
+    [coder encodeBool:self.data forKey:MTPacketKeyData];
     //[coder encodeInteger:self.type forKey:MTPacketKeyType];
     //[coder encodeInteger:self.action forKey:MTPacketKeyAction];
 }

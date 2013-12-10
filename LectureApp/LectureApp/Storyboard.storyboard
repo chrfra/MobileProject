@@ -116,6 +116,9 @@
                                 <state key="normal" title="I don't get it!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tooDifficult:" destination="7lk-JN-oWV" eventType="touchUpInside" id="yyj-xk-h5a"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qx3-LL-BK7">
                                 <rect key="frame" x="137" y="301" width="66" height="30"/>
@@ -132,7 +135,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BEU-Md-8Pz"/>
                     <connections>
-                        <outlet property="tooDifficult" destination="6Lk-JZ-Vcz" id="s8N-o0-k0H"/>
+                        <outlet property="tooDifficult" destination="6Lk-JZ-Vcz" id="Zle-gc-nfA"/>
                         <outlet property="tooEasy" destination="Qx3-LL-BK7" id="Xjt-o2-xmI"/>
                     </connections>
                 </viewController>
