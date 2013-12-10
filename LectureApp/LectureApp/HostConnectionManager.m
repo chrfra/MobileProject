@@ -105,6 +105,8 @@ static HostConnectionManager *sharedhostconnectionmanager = nil;
 }
 
 - (void)socket:(GCDAsyncSocket *)socket didReadData:(NSData *)data withTag:(long)tag {
+    [[self.visualisation status] setText:@"We have connection!"];
+    
     if (tag == 0) {
         uint64_t bodyLength = [self parseHeader:data];
         [socket readDataToLength:bodyLength withTimeout:-1.0 tag:1];
@@ -112,6 +114,8 @@ static HostConnectionManager *sharedhostconnectionmanager = nil;
         [self parseBody:data];
         [socket readDataToLength:sizeof(uint64_t) withTimeout:-1 tag:0]; //Why is it 30?
     }
+    
+    
 }
 
 

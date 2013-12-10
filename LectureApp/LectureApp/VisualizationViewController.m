@@ -27,7 +27,7 @@
         // Custom initialization
 
     }
-    [[HostConnectionManager sharedhostconnectionmanager] setVisualisation:self];
+
     return self;
 }
 
@@ -35,6 +35,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+        [[HostConnectionManager sharedhostconnectionmanager] setVisualisation:self];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -66,9 +67,11 @@
 {
     /* Testing code generating sample votes
     If there are no splashes, create 10 sample splashes (just for testing)*/
-    if(_splashes == nil){
+    
+    //why to repeat this?
+    /*if(_splashes == nil){
         _splashes = [NSMutableArray array];
-    }
+    }*/
         /*
         //Create and store 10 splashes
         for(int i = 0; i < 10; i++)
