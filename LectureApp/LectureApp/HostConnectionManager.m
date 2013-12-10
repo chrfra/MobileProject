@@ -124,8 +124,14 @@ static HostConnectionManager *sharedhostconnectionmanager = nil;
     MTPacket *packet = [unarchiver decodeObjectForKey:@"packet"];
     [unarchiver finishDecoding];
     NSLog(@"Packet Data > %@", packet.data);
-    NSLog(@"Packet Type > %i", packet.type);
-    NSLog(@"Packet Action > %i", packet.action);
+    
+    BOOL tooDifficult = packet.data;
+    if(tooDifficult==NO){
+        
+    }
+    
+    //NSLog(@"Packet Type > %i", packet.type);
+    //NSLog(@"Packet Action > %i", packet.action);
 }
 
 
