@@ -32,13 +32,11 @@
 - (void)setUp:(BOOL)tooDifficult {
     self.backgroundColor = [UIColor clearColor];
     if(tooDifficult){
-        self.color = [UIColor colorWithRed:255 green:0 blue:0 alpha:0.5];
+        self.color = [UIColor colorWithRed:255 green:255 blue:0 alpha:1];
     }else{
-        self.color = [UIColor colorWithRed:0 green:255 blue:255 alpha:0.5];
+        self.color = [UIColor colorWithRed:0 green:255 blue:255 alpha:1];
     }
 }
-
-
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -49,10 +47,10 @@
  CGRect splash = CGRectInset(self.bounds, 2, 2);
  
  // Create an oval shape to draw.
- UIBezierPath* aPath = [UIBezierPath bezierPathWithOvalInRect:splash];;
+ UIBezierPath* aPath = [UIBezierPath bezierPathWithOvalInRect:splash];
  
  // Set the render colors
- [[UIColor blackColor] setStroke];
+ //[[UIColor blackColor] setStroke];
  [self.color setFill];
  
  // Fill the path before stroking it so that the fill
