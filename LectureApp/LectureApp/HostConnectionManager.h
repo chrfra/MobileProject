@@ -7,8 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VisualizationViewController.h"
+
+
 
 @interface HostConnectionManager : NSObject
+
+@property (strong, nonatomic) VisualizationViewController *visualisation;
+
 
 + (HostConnectionManager *) sharedhostconnectionmanager;
 

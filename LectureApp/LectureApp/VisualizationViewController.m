@@ -9,6 +9,7 @@
 
 #import "VisualizationViewController.h"
 #import "Splash.h"
+#import "HostConnectionManager.h"
 
 @interface VisualizationViewController ()
 
@@ -26,6 +27,7 @@
         // Custom initialization
 
     }
+    [[HostConnectionManager sharedhostconnectionmanager] setVisualisation:self];
     return self;
 }
 

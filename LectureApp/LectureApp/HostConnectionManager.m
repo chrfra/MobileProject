@@ -8,6 +8,7 @@
 
 #import "HostConnectionManager.h"
 #import "MTPacket.h"
+#import "VisualizationViewController.h"
 
 @interface HostConnectionManager ()  <NSNetServiceDelegate, NSNetServiceBrowserDelegate, GCDAsyncSocketDelegate>
 
@@ -15,6 +16,8 @@
 @property (strong, nonatomic) NSNetService *service;
 
 @property (strong, nonatomic) GCDAsyncSocket *listening_socket;
+
+
 
 //Now instead of one variable we have an array of sockets.
 @property (strong, nonatomic) NSMutableArray *sockets;
@@ -126,9 +129,8 @@ static HostConnectionManager *sharedhostconnectionmanager = nil;
     NSLog(@"Packet Data > %@", packet.data);
     
     BOOL tooDifficult = packet.data;
-    if(tooDifficult==NO){
-        
-    }
+    [self.visualisation addSplash:tooDifficult];
+    
     
     //NSLog(@"Packet Type > %i", packet.type);
     //NSLog(@"Packet Action > %i", packet.action);
