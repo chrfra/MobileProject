@@ -126,20 +126,25 @@ static ConnectionController *sharedconnectioncontroller = nil;
     MTPacket *packet = [unarchiver decodeObjectForKey:@"packet"];
     [unarchiver finishDecoding];
     NSLog(@"Packet Data > %@", packet.data);
-    NSLog(@"Packet Type > %i", packet.type);
-    NSLog(@"Packet Action > %i", packet.action);
+    //NSLog(@"Packet Type > %i", packet.type);
+    //NSLog(@"Packet Action > %i", packet.action);
 }
+
+
 
 //Called from VoteViewController when "tooEasy"-button is pressed
 -(void)tooEasy{
     NSLog(@"ConnectionController tooEasy called!");
     
-    NSString *message = @"Message: too easy"; //message
-    MTPacket *packet = [[MTPacket alloc] initWithData:message type:0 action:0];
+    //
+    MTPacket *packet = [[MTPacket alloc] initWithData:NO];
     // Send Packet
     [self sendPacket:packet];
 
 }
+
+
+
 
 //Sending packet
 - (void)sendPacket:(MTPacket *)packet {
