@@ -128,6 +128,35 @@ static ConnectionController *sharedconnectioncontroller = nil;
     NSLog(@"Packet Action > %i", packet.action);
 }
 
+//Called from VoteViewController when "tooEasy"-button is pressed
+-(void)tooEasy{
+    NSLog(@"ConnectionController tooEasy called!");
+    
+    NSString *message = @"Sent message: I just wanted to say this is too easy"; //message
+    MTPacket *packet = [[MTPacket alloc] initWithData:message type:0 action:0];
+    // Send Packet
+    [self sendPacket:packet];
+
+}
+
+//Sending packet
+- (void)sendPacket:(MTPacket *)packet {
+    
+    // Encode Packet Data
+    NSMutableData *packetData = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:packetData];
+    [archiver encodeObject:packet forKey:@"packet"];
+    [archiver finishEncoding];
+    // Initialize Buffer
+    NSMutableData *buffer = [[NSMutableData alloc] init];
+    // Fill Buffer
+    uint64_t headerLength = [packetData length];
+    [buffer appendBytes:&headerLength length:sizeof(uint64_t)];
+    [buffer appendBytes:[packetData bytes] length:[packetData length]];
+    // Write Buffer
+    [self.socket writeData:buffer withTimeout:-1.0 tag:0];
+}
+
 
 
 @end

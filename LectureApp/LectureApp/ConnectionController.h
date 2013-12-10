@@ -14,4 +14,6 @@
 
 - (void)socketWasSelected:(NSNetService *)service;
 
+-(void)tooEasy;
+
 @end

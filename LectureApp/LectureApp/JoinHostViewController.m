@@ -80,6 +80,10 @@ static NSString *ServiceCell = @"ServiceCell";
     // Configure Cell
     [cell.textLabel setText:[service name]];
     return cell;
+    
+    
+    
+    
 }
 
 
@@ -136,6 +140,7 @@ static NSString *ServiceCell = @"ServiceCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     // Fetch Service
     NSNetService *service = [self.services objectAtIndex:[indexPath row]];
@@ -148,8 +153,17 @@ static NSString *ServiceCell = @"ServiceCell";
     //Sending the service to ConnectionController
     [[ConnectionController sharedConnectionController] socketWasSelected:service];
     
+    [self performSegueWithIdentifier:@"tovoteview" sender:self];
+    
+    //
+    
 }
 
+
+/** 
+ 
+THIS IS OLD CODE - NOW MOVED TO CONNECTION CONTROLLER
+ 
 - (void)netService:(NSNetService *)service didNotResolve:(NSDictionary *)errorDict {
     [service setDelegate:nil];
 }
