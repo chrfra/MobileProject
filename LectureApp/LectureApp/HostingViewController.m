@@ -7,6 +7,7 @@
 //
 
 #import "HostingViewController.h"
+#import "VisualizationViewController.h"
 #import "MTPacket.h"
 
 @interface HostingViewController ()  <NSNetServiceDelegate, GCDAsyncSocketDelegate>
@@ -132,11 +133,22 @@
     NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
     MTPacket *packet = [unarchiver decodeObjectForKey:@"packet"];
     [unarchiver finishDecoding];
-    NSLog(@"Packet Data > %@", packet.data);
-    NSLog(@"Packet Type > %i", packet.type);
-    NSLog(@"Packet Action > %i", packet.action);
+
+    NSString *vote = (NSString *)packet.data;
+    NSLog(@"Vote: %@",vote);
+    
+    [_visView addSplash:YES];
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString * segueName = segue.identifier;
+    if ([segueName isEqualToString: @"alertview_embed"]) {
+        VisualizationViewController * childViewController = (VisualizationViewController *) [segue destinationViewController];
+        _visView = childViewController.view;
+        // do something with the AlertView's subviews here...
+    }
+}
 
 @end
 

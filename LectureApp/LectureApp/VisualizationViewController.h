@@ -12,4 +12,8 @@
 
 @property (strong,nonatomic) NSMutableArray *splashes;
 
+-(void)addSplash:(BOOL)tooDifficult;
+- (void)fade;
+- (void)grow;
+
 @end

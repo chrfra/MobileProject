@@ -65,9 +65,9 @@
     /* Testing code generating sample votes
     If there are no splashes, create 10 sample splashes (just for testing)*/
     if(_splashes == nil){
-        
         _splashes = [NSMutableArray array];
-        
+    }
+        /*
         //Create and store 10 splashes
         for(int i = 0; i < 10; i++)
         {
@@ -87,9 +87,9 @@
             //Add splash to array of splashes
             [_splashes addObject:splash];
         }
-    }
+    }*/
     
-    /* Real code
+    /*Real code*/
     if(_splashes == nil){
         _splashes = [NSMutableArray array];
     }
@@ -97,11 +97,10 @@
             int y = (arc4random() % ( (int)(self.view.frame.size.height - (kSplashMaxWidth)) ) ) + (kSplashMaxWidth/2);
 
             //Create one splash
-            UIView *splash = [[Splash alloc] initWithFrame: CGRectMake ( x, y, kSplashInitialWidth, kSplashInitialWidth) tooDifficult:difficult];
+            UIView *splash = [[Splash alloc] initWithFrame: CGRectMake ( x, y, kSplashInitialWidth, kSplashInitialWidth) tooDifficult:tooDifficult];
             
             //Add splash to array of splashes
             [_splashes addObject:splash];
-    */
 }
 
 

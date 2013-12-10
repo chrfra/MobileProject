@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VisualizationViewController.h"
 
 @interface HostingViewController : UIViewController
 
+@property (strong,nonatomic) VisualizationViewController * visView;
 
 
 
