@@ -38,10 +38,10 @@
 
 - (IBAction)tooEasy:(UIButton *)sender {
     [[ConnectionController sharedConnectionController] sendVote:NO];
-    
 }
 - (IBAction)tooDifficult:(UIButton *)sender {
-        [[ConnectionController sharedConnectionController] sendVote:YES];
+    [[ConnectionController sharedConnectionController] sendVote:YES];
 }
+
 
 @end

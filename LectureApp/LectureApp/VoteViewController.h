@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *tooEasy;
 @property (weak, nonatomic) IBOutlet UIButton *tooDifficult;
 
-
+- (IBAction)tooEasy:(UIButton *)sender;
+- (IBAction)tooDifficult:(UIButton *)sender;
 @end
