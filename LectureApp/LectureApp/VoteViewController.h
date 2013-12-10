@@ -10,8 +10,8 @@
 
 @interface VoteViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *tooDifficult;
-@property (weak, nonatomic) IBOutlet UIButton *tooEasy;
 
+@property (weak, nonatomic) IBOutlet UIButton *tooEasy;
 
 
 @end

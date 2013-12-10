@@ -36,11 +36,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)tooEasyPressed:(id)sender {
-    NSLog(@"too easy!");
+- (IBAction)tooEasy:(UIButton *)sender {
+    NSLog(@"TooEasy!");
     
+    [[ConnectionController sharedConnectionController] tooEasy];
     
 }
-
 
 @end
