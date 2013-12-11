@@ -127,6 +127,7 @@ static NSString *ServiceCell = @"ServiceCell";
     //[super viewWillDisappear:animated];
     if (self.isMovingFromParentViewController || self.isBeingDismissed) {
              [self stopBrowsing];
+                
     }
 }
 

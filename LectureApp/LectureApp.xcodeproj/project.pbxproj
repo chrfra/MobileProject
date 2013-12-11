@@ -26,6 +26,7 @@
 		6699F525185894520071D664 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6699F524185894520071D664 /* logo.png */; };
 		6699F527185894F80071D664 /* tooeasy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6699F526185894F80071D664 /* tooeasy.png */; };
 		6699F529185894FE0071D664 /* toodifficult.png in Resources */ = {isa = PBXBuildFile; fileRef = 6699F528185894FE0071D664 /* toodifficult.png */; };
+		6699F52B1858AAF30071D664 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 6699F52A1858AAF30071D664 /* start.png */; };
 		669FA6BD184E30F300F4458E /* HostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669FA6BC184E30F300F4458E /* HostingViewController.m */; };
 		669FA6C0184E327100F4458E /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 669FA6BF184E327100F4458E /* GCDAsyncSocket.m */; };
 		669FA6C2184E331C00F4458E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669FA6C1184E331C00F4458E /* CFNetwork.framework */; };
@@ -74,6 +75,7 @@
 		6699F524185894520071D664 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		6699F526185894F80071D664 /* tooeasy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tooeasy.png; sourceTree = "<group>"; };
 		6699F528185894FE0071D664 /* toodifficult.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toodifficult.png; sourceTree = "<group>"; };
+		6699F52A1858AAF30071D664 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
 		669FA6BB184E30F300F4458E /* HostingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostingViewController.h; sourceTree = "<group>"; };
 		669FA6BC184E30F300F4458E /* HostingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostingViewController.m; sourceTree = "<group>"; };
 		669FA6BE184E327100F4458E /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				6699F526185894F80071D664 /* tooeasy.png */,
 				669FA6BB184E30F300F4458E /* HostingViewController.h */,
 				669FA6BC184E30F300F4458E /* HostingViewController.m */,
+				6699F52A1858AAF30071D664 /* start.png */,
 				6699F528185894FE0071D664 /* toodifficult.png */,
 				66E8422D18573F0B00478E81 /* HostConnectionManager.h */,
 				66E8422E18573F0B00478E81 /* HostConnectionManager.m */,
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6657E02F184752360028B14A /* InfoPlist.strings in Resources */,
+				6699F52B1858AAF30071D664 /* start.png in Resources */,
 				6699F521185892CE0071D664 /* joinbutton.png in Resources */,
 				6699F525185894520071D664 /* logo.png in Resources */,
 				6699F5231858935F0071D664 /* createbutton.png in Resources */,
