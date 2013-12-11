@@ -30,8 +30,13 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    //Show lecture id (name of phone on network) in label
+    [_lectureIdLabel setText:[[NSProcessInfo processInfo] hostName]];
+}
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     

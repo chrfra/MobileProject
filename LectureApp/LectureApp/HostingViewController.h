@@ -13,6 +13,6 @@
 
 @property (strong,nonatomic) VisualizationViewController * visView;
 
-
+@property (weak, nonatomic) IBOutlet UILabel *lectureIdLabel;
 
 @end
