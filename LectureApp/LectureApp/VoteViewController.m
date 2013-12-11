@@ -43,5 +43,14 @@
     [[ConnectionController sharedConnectionController] sendVote:YES];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    //[super viewWillDisappear:animated];
+    if (self.isMovingFromParentViewController || self.isBeingDismissed) {
+        [[ConnectionController sharedConnectionController] stop];
+        
+    }
+}
+
+
 
 @end
