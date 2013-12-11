@@ -25,9 +25,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-
     }
-
     return self;
 }
 
@@ -40,7 +38,6 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,7 +50,6 @@
 //@parameter tooDifficult whether the received button pressed indicated the lecture being too difficult
 -(void)addSplash:(BOOL)tooDifficult
 {
-    /*Real code*/
     if(_splashes == nil){
         _splashes = [NSMutableArray array];
     }
@@ -66,15 +62,12 @@
     //Add splash to array of splashes
     [_splashes addObject:splash];
     
-    //Display all splases on screen
+    //Display the splash on the screen
     [self.view addSubview:splash];
     
-    //Start fading Splashes
+    //Start fading Splash
     [splash fade];
-    //Start growing Splashes
+    //Start growing Splash
     [splash grow];
 }
-
-
-
 @end
