@@ -118,34 +118,28 @@ static HostConnectionManager *sharedhostconnectionmanager = nil;
     
 }
 
-
 - (uint64_t)parseHeader:(NSData *)data {
     uint64_t headerLength = 0;
     memcpy(&headerLength, [data bytes], sizeof(uint64_t));
     return headerLength;
 }
 
-
 - (void)parseBody:(NSData *)data {
+    //Receive and unarchive the packet
     NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
     MTPacket *packet = [unarchiver decodeObjectForKey:@"packet"];
     [unarchiver finishDecoding];
-    
     NSString *receivedString = packet.data;
-    
+
+    //Interpret received string
     BOOL tooDificult;
-    NSLog(@"Voted: %@", receivedString);
     if( [receivedString isEqualToString:@"YES"] ){
         tooDificult = YES;
     }else{
         tooDificult = NO;
     }
-    
-    
+    //Create and show splash on screen
     [self.visualisation addSplash:tooDificult];
-
-    //NSLog(@"Packet Type > %i", packet.type);
-    //NSLog(@"Packet Action > %i", packet.action);
 }
 
 

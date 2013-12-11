@@ -31,11 +31,13 @@
 
 - (void)setUp:(BOOL)tooDifficult {
     self.backgroundColor = [UIColor clearColor];
-    if(tooDifficult){
-        self.color = [UIColor colorWithRed:255 green:255 blue:0 alpha:1];
-    }else{
-        self.color = [UIColor colorWithRed:0 green:255 blue:255 alpha:1];
-    }
+    //Set color of splash depending on student's vote
+     if(tooDifficult){
+         self.color = [UIColor colorWithRed:255/255.0 green:124/255.0 blue:0 alpha:1];
+     }else{
+         self.color = [UIColor colorWithRed:12/255.0 green:166/255.0 blue:198/255.0 alpha:1];
+     }
+
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -57,7 +59,6 @@
  // color does not obscure the stroked line.
  [aPath fill];
 }
-
 
 /*
  Animations
