@@ -12,8 +12,6 @@
 
 @property (strong,nonatomic) NSMutableArray *splashes;
 
-@property (weak, nonatomic) IBOutlet UILabel *status;
-
 -(void)addSplash:(BOOL)tooDifficult;
 - (void)fade;
 - (void)grow;

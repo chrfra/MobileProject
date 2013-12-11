@@ -105,7 +105,6 @@ static HostConnectionManager *sharedhostconnectionmanager = nil;
 }
 
 - (void)socket:(GCDAsyncSocket *)socket didReadData:(NSData *)data withTag:(long)tag {
-    [[self.visualisation status] setText:@"We have connection!"];
     
     if (tag == 0) {
         uint64_t bodyLength = [self parseHeader:data];
