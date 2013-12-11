@@ -19,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="-432" y="85"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - LectureApp-->
         <scene sceneID="Ms9-Ps-JZh">
             <objects>
                 <viewController id="DWE-8S-110" sceneMemberID="viewController">
@@ -31,42 +31,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vi-08-LTe">
-                                <rect key="frame" x="228" y="84" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vi-08-LTe">
+                                <rect key="frame" x="39" y="421" width="241" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Join">
+                                <state key="normal" title="Join" image="joinbutton.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="44J-Uc-o9U" kind="push" id="wZ9-sN-bkM"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BBU-hK-7s6">
-                                <rect key="frame" x="20" y="85" width="191" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49R-be-SnP">
+                                <rect key="frame" x="39" y="293" width="241" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49R-be-SnP">
-                                <rect key="frame" x="30" y="162" width="160" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Or create a new lecture">
+                                <state key="normal" title="Or create a new lecture" image="createbutton.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="c6i-EV-Cgw" kind="push" id="H83-1C-1D2"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ypM-QT-sC2">
+                                <rect key="frame" x="53" y="105" width="214" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.91372555494308472" green="0.9647059440612793" blue="0.97254908084869385" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bgJ-xR-20Z"/>
+                    <navigationItem key="navigationItem" title="LectureApp" id="bgJ-xR-20Z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwD-yR-59D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47" y="39"/>
         </scene>
-        <!--Join Host View Controller-->
+        <!--Join Host View Controller - Choose network-->
         <scene sceneID="SlY-YY-Brr">
             <objects>
                 <tableViewController id="44J-Uc-o9U" customClass="JoinHostViewController" sceneMemberID="viewController">
@@ -92,13 +90,13 @@
                             <outlet property="delegate" destination="44J-Uc-o9U" id="AWV-Xv-V0b"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NwS-Dk-0gx"/>
+                    <navigationItem key="navigationItem" title="Choose network" id="NwS-Dk-0gx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kp7-4c-4jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="545" y="-332"/>
         </scene>
-        <!--Vote View Controller-->
+        <!--Vote View Controller - How are you feeling?-->
         <scene sceneID="uji-2f-At1">
             <objects>
                 <viewController id="7lk-JN-oWV" customClass="VoteViewController" sceneMemberID="viewController">
@@ -110,20 +108,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lk-JZ-Vcz">
-                                <rect key="frame" x="105" y="150" width="87" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lk-JZ-Vcz">
+                                <rect key="frame" x="26" y="90" width="268" height="217"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="I don't get it!">
+                                <state key="normal" title="I don't get it!" image="toodifficult.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="tooDifficult:" destination="7lk-JN-oWV" eventType="touchUpInside" id="bBV-Go-EMv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qx3-LL-BK7">
-                                <rect key="frame" x="137" y="301" width="66" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qx3-LL-BK7">
+                                <rect key="frame" x="26" y="324" width="268" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Too Easy!">
+                                <state key="normal" title="Too Easy!" image="tooeasy.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -131,9 +129,9 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.91372555489999996" green="0.96470594409999999" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BEU-Md-8Pz"/>
+                    <navigationItem key="navigationItem" title="How are you feeling?" id="BEU-Md-8Pz"/>
                     <connections>
                         <outlet property="tooDifficult" destination="6Lk-JZ-Vcz" id="Zle-gc-nfA"/>
                         <outlet property="tooEasy" destination="Qx3-LL-BK7" id="Xjt-o2-xmI"/>
@@ -212,6 +210,13 @@
             <point key="canvasLocation" x="1000" y="428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="createbutton.png" width="502" height="226"/>
+        <image name="joinbutton.png" width="502" height="226"/>
+        <image name="logo.png" width="441" height="302"/>
+        <image name="toodifficult.png" width="543" height="462"/>
+        <image name="tooeasy.png" width="543" height="462"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

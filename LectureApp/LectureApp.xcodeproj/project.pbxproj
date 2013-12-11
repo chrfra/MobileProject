@@ -21,6 +21,11 @@
 		6657E04A184752360028B14A /* LectureAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6657E049184752360028B14A /* LectureAppTests.m */; };
 		6657E054184757720028B14A /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6657E053184757720028B14A /* Storyboard.storyboard */; };
 		6657E09818476FF50028B14A /* Lecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6657E09718476FF50028B14A /* Lecture.m */; };
+		6699F521185892CE0071D664 /* joinbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6699F520185892CE0071D664 /* joinbutton.png */; };
+		6699F5231858935F0071D664 /* createbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6699F5221858935F0071D664 /* createbutton.png */; };
+		6699F525185894520071D664 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6699F524185894520071D664 /* logo.png */; };
+		6699F527185894F80071D664 /* tooeasy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6699F526185894F80071D664 /* tooeasy.png */; };
+		6699F529185894FE0071D664 /* toodifficult.png in Resources */ = {isa = PBXBuildFile; fileRef = 6699F528185894FE0071D664 /* toodifficult.png */; };
 		669FA6BD184E30F300F4458E /* HostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669FA6BC184E30F300F4458E /* HostingViewController.m */; };
 		669FA6C0184E327100F4458E /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 669FA6BF184E327100F4458E /* GCDAsyncSocket.m */; };
 		669FA6C2184E331C00F4458E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669FA6C1184E331C00F4458E /* CFNetwork.framework */; };
@@ -64,6 +69,11 @@
 		6657E053184757720028B14A /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		6657E09618476FF50028B14A /* Lecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lecture.h; sourceTree = "<group>"; };
 		6657E09718476FF50028B14A /* Lecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lecture.m; sourceTree = "<group>"; };
+		6699F520185892CE0071D664 /* joinbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joinbutton.png; sourceTree = "<group>"; };
+		6699F5221858935F0071D664 /* createbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createbutton.png; sourceTree = "<group>"; };
+		6699F524185894520071D664 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		6699F526185894F80071D664 /* tooeasy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tooeasy.png; sourceTree = "<group>"; };
+		6699F528185894FE0071D664 /* toodifficult.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toodifficult.png; sourceTree = "<group>"; };
 		669FA6BB184E30F300F4458E /* HostingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostingViewController.h; sourceTree = "<group>"; };
 		669FA6BC184E30F300F4458E /* HostingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostingViewController.m; sourceTree = "<group>"; };
 		669FA6BE184E327100F4458E /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
@@ -157,9 +167,14 @@
 				AA482F23184F36F6003CCF3F /* VisualizationViewController.h */,
 				AA482F24184F36F6003CCF3F /* VisualizationViewController.m */,
 				669FA710184E505400F4458E /* JoinHostViewController.h */,
+				6699F520185892CE0071D664 /* joinbutton.png */,
+				6699F524185894520071D664 /* logo.png */,
+				6699F5221858935F0071D664 /* createbutton.png */,
 				669FA711184E505400F4458E /* JoinHostViewController.m */,
+				6699F526185894F80071D664 /* tooeasy.png */,
 				669FA6BB184E30F300F4458E /* HostingViewController.h */,
 				669FA6BC184E30F300F4458E /* HostingViewController.m */,
+				6699F528185894FE0071D664 /* toodifficult.png */,
 				66E8422D18573F0B00478E81 /* HostConnectionManager.h */,
 				66E8422E18573F0B00478E81 /* HostConnectionManager.m */,
 				AA482F20184F3256003CCF3F /* Splash.h */,
@@ -281,8 +296,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6657E02F184752360028B14A /* InfoPlist.strings in Resources */,
+				6699F521185892CE0071D664 /* joinbutton.png in Resources */,
+				6699F525185894520071D664 /* logo.png in Resources */,
+				6699F5231858935F0071D664 /* createbutton.png in Resources */,
+				6699F527185894F80071D664 /* tooeasy.png in Resources */,
 				6657E037184752360028B14A /* Images.xcassets in Resources */,
 				6657E054184757720028B14A /* Storyboard.storyboard in Resources */,
+				6699F529185894FE0071D664 /* toodifficult.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +457,7 @@
 				GCC_PREFIX_HEADER = "LectureApp/LectureApp-Prefix.pch";
 				INFOPLIST_FILE = "LectureApp/LectureApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -450,6 +471,7 @@
 				GCC_PREFIX_HEADER = "LectureApp/LectureApp-Prefix.pch";
 				INFOPLIST_FILE = "LectureApp/LectureApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
