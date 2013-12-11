@@ -74,7 +74,7 @@
         //Fade animation
         [UIView animateWithDuration:kFadeDuration
                               delay: 0.0
-                            options: UIViewAnimationOptionCurveEaseIn
+                            options: UIViewAnimationOptionCurveLinear
                          animations:^{
                              self.alpha = 0.0;
                          }
