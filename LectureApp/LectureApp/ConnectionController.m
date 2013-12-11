@@ -114,18 +114,19 @@ static ConnectionController *sharedconnectioncontroller = nil;
     }
 }
 
+//parseHeader and parsebody unused since the student app never receives any data
 - (uint64_t)parseHeader:(NSData *)data {
     uint64_t headerLength = 0;
     memcpy(&headerLength, [data bytes], sizeof(uint64_t));
     return headerLength;
 }
 
-
 - (void)parseBody:(NSData *)data {
     NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
     MTPacket *packet = [unarchiver decodeObjectForKey:@"packet"];
     [unarchiver finishDecoding];
     NSLog(@"Packet Data > %@", packet.data);
+    
     //NSLog(@"Packet Type > %i", packet.type);
     //NSLog(@"Packet Action > %i", packet.action);
 }
@@ -134,8 +135,12 @@ static ConnectionController *sharedconnectioncontroller = nil;
 
 //Called from VoteViewController when one of the buttons is pressed
 -(void)sendVote:(BOOL)tooDifficult{
-
-    MTPacket *packet = [[MTPacket alloc] initWithData:tooDifficult];
+    MTPacket *packet;
+    if(tooDifficult){
+        packet = [[MTPacket alloc] initWithData:@"YES"];
+    }else{
+        packet = [[MTPacket alloc] initWithData:@"NO"];
+    }
     // Send Packet
     [self sendPacket:packet];
 

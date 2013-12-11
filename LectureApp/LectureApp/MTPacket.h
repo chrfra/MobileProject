@@ -17,12 +17,12 @@ typedef enum { MTPacketActionUnknown = -1 } MTPacketAction;
 
 @interface MTPacket : NSObject
 
-@property BOOL data;
-//@property (assign, nonatomic) MTPacketType type;
-//@property (assign, nonatomic) MTPacketAction action;
+@property (strong, nonatomic) id data;
+@property (assign, nonatomic) MTPacketType type;
+@property (assign, nonatomic) MTPacketAction action;
 
 #pragma mark -
 #pragma mark Initialization
-- (id)initWithData:(BOOL)data;
+- (id)initWithData:(id)data;
 
 @end

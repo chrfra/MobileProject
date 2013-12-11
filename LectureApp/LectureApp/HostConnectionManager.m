@@ -131,8 +131,18 @@ static HostConnectionManager *sharedhostconnectionmanager = nil;
     MTPacket *packet = [unarchiver decodeObjectForKey:@"packet"];
     [unarchiver finishDecoding];
     
-    BOOL tooDifficult = packet.data;
-    [self.visualisation addSplash:tooDifficult];
+    NSString *receivedString = packet.data;
+    
+    BOOL tooDificult;
+    NSLog(@"Voted: %@", receivedString);
+    if( [receivedString isEqualToString:@"YES"] ){
+        tooDificult = YES;
+    }else{
+        tooDificult = NO;
+    }
+    
+    
+    [self.visualisation addSplash:tooDificult];
 
     //NSLog(@"Packet Type > %i", packet.type);
     //NSLog(@"Packet Action > %i", packet.action);
