@@ -12,6 +12,7 @@
 @interface ConnectionController ()  <NSNetServiceDelegate, NSNetServiceBrowserDelegate, GCDAsyncSocketDelegate>
 
 @property (strong, nonatomic) GCDAsyncSocket *socket;
+@property (strong, nonatomic) GCDAsyncSocket *listeningsocket;
 
 //These are probably not needed:
 //@property (strong, nonatomic) NSMutableArray *services;
@@ -70,6 +71,7 @@ static ConnectionController *sharedconnectioncontroller = nil;
 
 - (BOOL)connectWithService:(NSNetService *)service {
     BOOL _isConnected = NO;
+    self.listeningsocket = self.socket;
     // Copy Service Addresses
     NSArray *addresses = [[service addresses] mutableCopy];
     if (!self.socket || ![self.socket isConnected]) {
@@ -167,6 +169,8 @@ static ConnectionController *sharedconnectioncontroller = nil;
     [self.socket writeData:buffer withTimeout:-1.0 tag:0];
 }
 
-
+-(void)stop{
+    self.socket = self.listeningsocket;
+}
 
 @end

@@ -16,4 +16,6 @@
 
 -(void)sendVote:(BOOL)tooDifficult;
 
+-(void)stop;
+
 @end
