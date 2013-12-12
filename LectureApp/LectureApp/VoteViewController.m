@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,10 +39,40 @@
 
 - (IBAction)tooEasy:(UIButton *)sender {
     [[ConnectionController sharedConnectionController] sendVote:NO];
+    self.tooEasy.userInteractionEnabled = NO;
+    self.tooEasy.alpha = 0.5;
+    [self performSelector: @selector (enableButton:) withObject:sender afterDelay:5.0F];
+
 }
+
+
 - (IBAction)tooDifficult:(UIButton *)sender {
     [[ConnectionController sharedConnectionController] sendVote:YES];
+    self.tooDifficult.userInteractionEnabled = NO;
+    self.tooDifficult.alpha = 0.5;
+
+    [self performSelector: @selector (enableButton:) withObject:sender afterDelay:5.0F];
 }
+
+- (void)viewWillDisappear:(BOOL)animated{
+    //[super viewWillDisappear:animated];
+    if (self.isMovingFromParentViewController || self.isBeingDismissed) {
+        [[ConnectionController sharedConnectionController] stop];
+        
+    }
+}
+
+- (int)enableButton:(UIButton *)sender{
+    
+        sender.userInteractionEnabled = YES;
+        sender.alpha = 1;
+
+    
+    
+    return 1;
+                                       
+                                       }
+
 
 
 @end

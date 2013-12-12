@@ -51,6 +51,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    //[super viewWillDisappear:animated];
+    if (self.isMovingFromParentViewController || self.isBeingDismissed) {
+        [[HostConnectionManager sharedhostconnectionmanager] stop];
+        
+    }
+}
+
 /**
  This is old connection stuff, now moved to HostConnectionManager.
  

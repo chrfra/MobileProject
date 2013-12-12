@@ -141,6 +141,11 @@ static HostConnectionManager *sharedhostconnectionmanager = nil;
     [self.visualisation addSplash:tooDificult];
 }
 
+-(void)stop{
+    [self.service stop];
+}
+
+
 
 
 @end
