@@ -40,6 +40,7 @@
 - (IBAction)tooEasy:(UIButton *)sender {
     [[ConnectionController sharedConnectionController] sendVote:NO];
     self.tooEasy.userInteractionEnabled = NO;
+    self.tooEasy.alpha = 0.5;
     [self performSelector: @selector (enableButton:) withObject:sender afterDelay:5.0F];
 
 }
@@ -48,6 +49,8 @@
 - (IBAction)tooDifficult:(UIButton *)sender {
     [[ConnectionController sharedConnectionController] sendVote:YES];
     self.tooDifficult.userInteractionEnabled = NO;
+    self.tooDifficult.alpha = 0.5;
+
     [self performSelector: @selector (enableButton:) withObject:sender afterDelay:5.0F];
 }
 
@@ -62,7 +65,8 @@
 - (int)enableButton:(UIButton *)sender{
     
         sender.userInteractionEnabled = YES;
-    
+        sender.alpha = 1;
+
     
     
     return 1;
