@@ -11,6 +11,7 @@
 @interface VisualizationViewController : UIViewController
 
 @property (strong,nonatomic) NSMutableArray *splashes;
+@property (weak, nonatomic) IBOutlet UILabel *waitingLabel;
 
 -(void)addSplash:(BOOL)tooDifficult;
 - (void)fade;

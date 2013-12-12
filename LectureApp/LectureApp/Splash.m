@@ -64,8 +64,8 @@
  Animations
  */
 
-#define kFadeDuration 30   //How long fading splash will take
-#define kResizeDuration 30//How long resizing splash will take
+#define kFadeDuration 60   //How long fading splash will take
+#define kResizeDuration 60//How long resizing splash will take
 #define kGrowFactor 6     //How much splash should grow by
 #define kShrinkFactor 3   //How much splash should shrink by
 

@@ -63,15 +63,10 @@
 }
 
 - (int)enableButton:(UIButton *)sender{
-    
-        sender.userInteractionEnabled = YES;
-        sender.alpha = 1;
-
-    
-    
+    sender.userInteractionEnabled = YES;
+    sender.alpha = 1;
     return 1;
-                                       
-                                       }
+}
 
 
 

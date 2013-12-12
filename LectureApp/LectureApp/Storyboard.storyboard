@@ -64,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="47" y="39"/>
         </scene>
-        <!--Join Host View Controller - Choose network-->
+        <!--Join Host View Controller - Choose Lecture-->
         <scene sceneID="SlY-YY-Brr">
             <objects>
                 <tableViewController id="44J-Uc-o9U" customClass="JoinHostViewController" sceneMemberID="viewController">
@@ -91,7 +91,7 @@
                             <outlet property="delegate" destination="44J-Uc-o9U" id="AWV-Xv-V0b"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Choose network" id="NwS-Dk-0gx"/>
+                    <navigationItem key="navigationItem" title="Choose Lecture" id="NwS-Dk-0gx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kp7-4c-4jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,6 +234,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="VHu-Px-1ca"/>
+                    <connections>
+                        <outlet property="waitingLabel" destination="WEn-sO-NRx" id="9PT-UA-G4o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaq-70-NSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
