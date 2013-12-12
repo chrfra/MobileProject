@@ -64,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="47" y="39"/>
         </scene>
-        <!--Join Host View Controller - Choose network-->
+        <!--Join Host View Controller - Choose Lecture-->
         <scene sceneID="SlY-YY-Brr">
             <objects>
                 <tableViewController id="44J-Uc-o9U" customClass="JoinHostViewController" sceneMemberID="viewController">
@@ -91,7 +91,7 @@
                             <outlet property="delegate" destination="44J-Uc-o9U" id="AWV-Xv-V0b"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Choose network" id="NwS-Dk-0gx"/>
+                    <navigationItem key="navigationItem" title="Choose Lecture" id="NwS-Dk-0gx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kp7-4c-4jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,9 +201,42 @@
                     <view key="view" contentMode="scaleToFill" id="R2z-UO-Ll3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zG-Oa-jLP">
+                                <rect key="frame" x="20" y="236" width="280" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Lecture Has Started">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="26" name="HelveticaNeue-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEn-sO-NRx">
+                                <rect key="frame" x="71" y="273" width="179" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Waiting For Feedback">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="13" name="HelveticaNeue-UltraLight"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="VHu-Px-1ca"/>
+                    <connections>
+                        <outlet property="waitingLabel" destination="WEn-sO-NRx" id="9PT-UA-G4o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaq-70-NSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

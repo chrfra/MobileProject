@@ -69,5 +69,11 @@
     [splash fade];
     //Start growing Splash
     [splash grow];
+    
+    //Hide label indicating that you're waiting for votes
+    if(![_waitingLabel isHidden]){
+        [_waitingLabel setHidden:YES];
+    }
+
 }
 @end
