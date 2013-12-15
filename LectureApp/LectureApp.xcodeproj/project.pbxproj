@@ -36,6 +36,8 @@
 		66E841EB18560AB300478E81 /* ConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E841EA18560AB300478E81 /* ConnectionController.m */; };
 		66E841EE185615EC00478E81 /* VoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E841ED185615EC00478E81 /* VoteViewController.m */; };
 		66E8422F18573F0B00478E81 /* HostConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E8422E18573F0B00478E81 /* HostConnectionManager.m */; };
+		AA0870F0185E12D300D99E10 /* blueLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0870EF185E12D300D99E10 /* blueLabel.png */; };
+		AA0870F2185E144500D99E10 /* orangeLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0870F1185E144500D99E10 /* orangeLabel.png */; };
 		AA482F22184F3256003CCF3F /* Splash.m in Sources */ = {isa = PBXBuildFile; fileRef = AA482F21184F3256003CCF3F /* Splash.m */; };
 		AA482F25184F36F6003CCF3F /* VisualizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA482F24184F36F6003CCF3F /* VisualizationViewController.m */; };
 /* End PBXBuildFile section */
@@ -92,6 +94,8 @@
 		66E841ED185615EC00478E81 /* VoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoteViewController.m; sourceTree = "<group>"; };
 		66E8422D18573F0B00478E81 /* HostConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostConnectionManager.h; sourceTree = "<group>"; };
 		66E8422E18573F0B00478E81 /* HostConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostConnectionManager.m; sourceTree = "<group>"; };
+		AA0870EF185E12D300D99E10 /* blueLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueLabel.png; sourceTree = "<group>"; };
+		AA0870F1185E144500D99E10 /* orangeLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeLabel.png; sourceTree = "<group>"; };
 		AA482F20184F3256003CCF3F /* Splash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Splash.h; sourceTree = "<group>"; };
 		AA482F21184F3256003CCF3F /* Splash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Splash.m; sourceTree = "<group>"; };
 		AA482F23184F36F6003CCF3F /* VisualizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualizationViewController.h; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				AA482F23184F36F6003CCF3F /* VisualizationViewController.h */,
 				AA482F24184F36F6003CCF3F /* VisualizationViewController.m */,
 				669FA710184E505400F4458E /* JoinHostViewController.h */,
+				AA0870F1185E144500D99E10 /* orangeLabel.png */,
+				AA0870EF185E12D300D99E10 /* blueLabel.png */,
 				6699F520185892CE0071D664 /* joinbutton.png */,
 				6699F524185894520071D664 /* logo.png */,
 				6699F5221858935F0071D664 /* createbutton.png */,
@@ -302,10 +308,12 @@
 				6699F52B1858AAF30071D664 /* start.png in Resources */,
 				6699F521185892CE0071D664 /* joinbutton.png in Resources */,
 				6699F525185894520071D664 /* logo.png in Resources */,
+				AA0870F0185E12D300D99E10 /* blueLabel.png in Resources */,
 				6699F5231858935F0071D664 /* createbutton.png in Resources */,
 				6699F527185894F80071D664 /* tooeasy.png in Resources */,
 				6657E037184752360028B14A /* Images.xcassets in Resources */,
 				6657E054184757720028B14A /* Storyboard.storyboard in Resources */,
+				AA0870F2185E144500D99E10 /* orangeLabel.png in Resources */,
 				6699F529185894FE0071D664 /* toodifficult.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

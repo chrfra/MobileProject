@@ -58,7 +58,7 @@
 
     //Create one splash
     Splash *splash = [[Splash alloc] initWithFrame: CGRectMake ( x, y, kSplashInitialWidth, kSplashInitialWidth) tooDifficult:tooDifficult];
-            
+    
     //Add splash to array of splashes
     [_splashes addObject:splash];
     
