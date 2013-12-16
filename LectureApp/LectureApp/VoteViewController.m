@@ -39,19 +39,22 @@
 
 - (IBAction)tooEasy:(UIButton *)sender {
     [[ConnectionController sharedConnectionController] sendVote:NO];
-    self.tooEasy.userInteractionEnabled = NO;
+    /*
+     self.tooEasy.userInteractionEnabled = NO;
     self.tooEasy.alpha = 0.5;
     [self performSelector: @selector (enableButton:) withObject:sender afterDelay:60.0F];
-
+     */
 }
 
 
 - (IBAction)tooDifficult:(UIButton *)sender {
     [[ConnectionController sharedConnectionController] sendVote:YES];
+    /*
     self.tooDifficult.userInteractionEnabled = NO;
     self.tooDifficult.alpha = 0.5;
 
     [self performSelector: @selector (enableButton:) withObject:sender afterDelay:60.0F];
+     */
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
