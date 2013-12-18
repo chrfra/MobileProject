@@ -16,9 +16,6 @@
 @property (strong, nonatomic) GCDAsyncSocket *socket;
 @end
 
-
-
-
 @implementation HostingViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
