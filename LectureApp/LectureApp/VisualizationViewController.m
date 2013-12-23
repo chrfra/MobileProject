@@ -38,6 +38,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [self addSplash:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,29 +51,32 @@
 //@parameter tooDifficult whether the received button pressed indicated the lecture being too difficult
 -(void)addSplash:(BOOL)tooDifficult
 {
-    if(_splashes == nil){
-        _splashes = [NSMutableArray array];
-    }
-    int x = (arc4random() % ( (int)(self.view.frame.size.width - (kSplashMaxWidth/2)) ) );
-    int y = (arc4random() % ( (int)(self.view.frame.size.height - (kSplashMaxWidth)) ) ) + (kSplashMaxWidth/2);
-
-    //Create one splash
-    Splash *splash = [[Splash alloc] initWithFrame: CGRectMake ( x, y, kSplashInitialWidth, kSplashInitialWidth) tooDifficult:tooDifficult];
-    
-    //Add splash to array of splashes
-    [_splashes addObject:splash];
-    
-    //Display the splash on the screen
-    [self.view addSubview:splash];
-    
-    //Start fading Splash
-    [splash fade];
-    //Start growing Splash
-    [splash grow];
-    
-    //Hide label indicating that you're waiting for votes
-    if(![_waitingLabel isHidden]){
-        [_waitingLabel setHidden:YES];
+    for(int i=0; i < 10; i++){
+        if(_splashes == nil){
+            _splashes = [NSMutableArray array];
+        }
+        int x = (arc4random() % ( (int)(self.view.frame.size.width - (kSplashMaxWidth/2)) ) );
+        int y = (arc4random() % ( (int)(self.view.frame.size.height - (kSplashMaxWidth)) ) ) + (kSplashMaxWidth/2);
+        if(i<8){tooDifficult=YES;}
+        else{tooDifficult=NO;}
+        //Create one splash
+        Splash *splash = [[Splash alloc] initWithFrame: CGRectMake ( x, y, kSplashInitialWidth, kSplashInitialWidth) tooDifficult:tooDifficult];
+        
+        //Add splash to array of splashes
+        [_splashes addObject:splash];
+        
+        //Display the splash on the screen
+        [self.view addSubview:splash];
+        
+        //Start fading Splash
+        [splash fade];
+        //Start growing Splash
+        [splash grow];
+        
+        //Hide label indicating that you're waiting for votes
+        if(![_waitingLabel isHidden]){
+            [_waitingLabel setHidden:YES];
+        }
     }
 
 }
